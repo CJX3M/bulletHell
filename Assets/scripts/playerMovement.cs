@@ -6,6 +6,8 @@ public class playerMovement : MonoBehaviour
 {
     public float speed = 0.0f;
 
+    public Boundary boundary;
+
     void FixedUpdate ()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -14,6 +16,19 @@ public class playerMovement : MonoBehaviour
         var movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         var rigidBody = GetComponent<Rigidbody>();
         rigidBody.velocity = movement * speed;
+
+        rigidBody.position = new Vector3
+            (
+                Mathf.Clamp(rigidBody.position.x, boundary.xMin, boundary.xMax),
+                0.0f,
+                Mathf.Clamp(rigidBody.position.z, boundary.zMin, boundary.zMax)
+            );
     }
    
+}
+
+[System.Serializable]
+public class Boundary
+{
+    public float xMin, xMax, zMin, zMax;
 }
