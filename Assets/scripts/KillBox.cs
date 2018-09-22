@@ -7,9 +7,18 @@ public class KillBox : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.transform.parent.gameObject != null)
-            Destroy(other.gameObject.transform.parent.gameObject);
-        else
-            Destroy(other.gameObject);
+        if (other.gameObject != null)
+        {
+            Debug.Log("Object: " + other.name);
+            switch (other.name)
+            {
+                case "Bullet":
+                    Destroy(other.gameObject.transform.parent.gameObject);
+                    break;
+                default:
+                    Destroy(other.gameObject);
+                    break;
+            }
+        }
     }
 }

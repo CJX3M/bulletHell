@@ -7,6 +7,7 @@ public class EnemySpawnerMov : MonoBehaviour
 
     public Boundary boundary;
     public GameObject enemyObject;
+    public GameObject playerShip;
     public float spawnRate;
     public float speed;
 
@@ -27,11 +28,12 @@ public class EnemySpawnerMov : MonoBehaviour
 
 	    if (myTime > nextSpawn)
 	    {
-	        nextSpawn += myTime + spawnRate;
+            nextSpawn += myTime + spawnRate;
 
 	        GameObject clone = Instantiate(enemyObject, transform.position, transform.rotation);
+            clone.GetComponent<EnemyMovement>().SetPlayerShip(playerShip);
 
-	        nextSpawn -= myTime;
+            nextSpawn -= myTime;
 	        myTime = 0.0f;
 	    }
 	}
