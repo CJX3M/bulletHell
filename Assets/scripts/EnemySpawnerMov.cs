@@ -24,17 +24,12 @@ public class EnemySpawnerMov : MonoBehaviour
 	    if (transform.position.x <= boundary.xMin || transform.position.x >= boundary.xMax)
 	        speed *= -1;
 
-	    myTime += Time.deltaTime;
-
-	    if (myTime > nextSpawn)
+	    if (Time.time > nextSpawn)
 	    {
-            nextSpawn += myTime + spawnRate;
+            nextSpawn = Time.time + spawnRate;
 
 	        GameObject clone = Instantiate(enemyObject, transform.position, transform.rotation);
             clone.GetComponent<EnemyMovement>().SetPlayerShip(playerShip);
-
-            nextSpawn -= myTime;
-	        myTime = 0.0f;
 	    }
 	}
 }

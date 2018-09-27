@@ -225,10 +225,10 @@ MonoBehaviour:
     xMax: 4
     zMin: 0
     zMax: 0
-  enemyObject: {fileID: 1544155165109136, guid: 24d129edc3c0e6e469d61afa608213b7,
+  enemyObject: {fileID: 1073508462067308, guid: 24d129edc3c0e6e469d61afa608213b7,
     type: 2}
   playerShip: {fileID: 1011739296}
-  spawnRate: 0.13
+  spawnRate: 0.5
   speed: 3
 --- !u!65 &285026963
 BoxCollider:

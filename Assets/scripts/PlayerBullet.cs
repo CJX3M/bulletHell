@@ -13,15 +13,13 @@ public class PlayerBullet : MonoBehaviour
 
     void Update()
     {
-        myTime += Time.deltaTime;
+        //myTime += Time.deltaTime;
 
-        if (Input.GetButton("Fire1") && myTime > nextFire)
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
-            nextFire = myTime + fireRate;
-            GameObject clone = Instantiate(shot, bulletSpawn.position, bulletSpawn.rotation) as GameObject;
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, bulletSpawn.position, bulletSpawn.rotation);
 
-            nextFire -= myTime;
-            myTime = 0.0f;
         }
     }
 

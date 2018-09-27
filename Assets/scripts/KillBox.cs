@@ -9,7 +9,6 @@ public class KillBox : MonoBehaviour
     {
         if (other.gameObject != null)
         {
-            Debug.Log("Object: " + other.name);
             switch (other.name)
             {
                 case "Bullet":
