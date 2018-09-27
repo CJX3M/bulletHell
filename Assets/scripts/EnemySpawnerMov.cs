@@ -11,11 +11,18 @@ public class EnemySpawnerMov : MonoBehaviour
     public float spawnRate;
     public float speed;
 
+    private ObjectPool enemies;
     private float nextSpawn = 0.5f;
     private float myTime;
 
 	// Use this for initialization
-	void Start () {}
+	void Start ()
+    {
+        enemies = new ObjectPool();
+        enemies.objectForPool = enemyObject;
+        enemies.poolAmmount = 10;
+        enemies.growth = false;
+    }
 	
 	// Update is called once per frame
 	void Update ()

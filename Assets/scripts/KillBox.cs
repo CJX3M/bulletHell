@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class KillBox : MonoBehaviour
 {
-
-    void OnTriggerExit(Collider other)
+    void OnEnable()
     {
-        if (other.gameObject != null)
-        {
-            switch (other.name)
-            {
-                case "Bullet":
-                    Destroy(other.gameObject.transform.parent.gameObject);
-                    break;
-                default:
-                    Destroy(other.gameObject);
-                    break;
-            }
-        }
+        Invoke("Destroy", 2f);
+    }
+
+    void Destroy()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
     }
 }

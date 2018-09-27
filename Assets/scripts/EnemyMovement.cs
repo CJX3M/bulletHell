@@ -6,8 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed;
 
-    private GameObject playerShip;    
-
+    private GameObject playerShip;
 	// Use this for initialization
 	void Start ()
 	{
