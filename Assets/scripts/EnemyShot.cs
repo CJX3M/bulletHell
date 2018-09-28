@@ -5,18 +5,13 @@ using UnityEngine;
 public class EnemyShot : MonoBehaviour
 {
     public float fireRate;
-    public GameObject shot;
 
-    private ObjectPool bullets;
     private float myTime;
     private float nextFire;
 
     // Use this for initialization
     void Start ()
     {
-        bullets = new ObjectPool();
-        bullets.poolAmmount = 10;
-        bullets.growth = false;
     }
 
     // Update is called once per frame
@@ -25,9 +20,8 @@ public class EnemyShot : MonoBehaviour
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            GameObject bullet = bullets.GetPooledObject();
+            GameObject bullet = GetComponent<ObjectPool>().GetPooledObject();
             if (bullet == null) return;
-
             bullet.transform.position = transform.position;
             bullet.transform.rotation = transform.rotation;
             bullet.SetActive(true);

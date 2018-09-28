@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    public GameObject shot;
     public Transform bulletSpawn;
     public float fireRate;
-    public ObjectPool bullets;
 
     private float nextFire;
     private float myTime;
 
     void Start()
     {
+        
     }
 
     void Update()
@@ -23,12 +22,11 @@ public class PlayerBullet : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            GameObject bullet = bullets.GetPooledObject();
+            GameObject bullet = GetComponent<ObjectPool>().GetPooledObject();
 
             if (bullet == null) return;
-
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = transform.rotation;
+            bullet.transform.position = bulletSpawn.transform.position;
+            bullet.transform.rotation = bulletSpawn.transform.rotation;
             bullet.SetActive(true);
         }
     }

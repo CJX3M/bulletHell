@@ -23,7 +23,7 @@ public class ObjectPool : MonoBehaviour
 
         for (int i = 0; i < poolAmmount; i++)
         {
-            GameObject obj = (GameObject)Instantiate(objectForPool);
+            GameObject obj = Instantiate(objectForPool);
             obj.SetActive(false);
             objectsForPool.Add(obj);
         }
@@ -40,7 +40,7 @@ public class ObjectPool : MonoBehaviour
         }
         if (growth)
         {
-            GameObject obj = (GameObject)Instantiate(objectForPool);            
+            GameObject obj = Instantiate(objectForPool);            
             objectsForPool.Add(obj);
             return obj;
         }
