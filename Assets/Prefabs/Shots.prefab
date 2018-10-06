@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 54166852986322214}
   - component: {fileID: 114134763336762230}
   - component: {fileID: 114469185230175248}
+  - component: {fileID: 114206845340670662}
   m_Layer: 0
   m_Name: Shots
   m_TagString: Untagged
@@ -143,6 +144,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+--- !u!114 &114206845340670662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509281206717448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbbb537371e8c9449841d33535b446d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: Enemie
+  damageAmount: 10
 --- !u!114 &114469185230175248
 MonoBehaviour:
   m_ObjectHideFlags: 1

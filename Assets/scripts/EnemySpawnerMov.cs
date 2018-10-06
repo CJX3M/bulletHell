@@ -35,6 +35,7 @@ public class EnemySpawnerMov : MonoBehaviour
             clone.GetComponent<EnemyMovement>().SetPlayerShip(playerShip);
             clone.transform.position = transform.position;
             clone.transform.rotation = transform.rotation;
+            clone.GetComponent<Health>().RestoreHealth();
             clone.SetActive(true);
         }
 	}
