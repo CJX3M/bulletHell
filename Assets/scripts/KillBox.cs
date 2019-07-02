@@ -1,21 +1,23 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KillBox : MonoBehaviour
 {
-    void OnEnable()
+    void OnTriggerExit(Collider other)
     {
-        Invoke("Destroy", 2f);
-    }
-
-    void Destroy()
-    {
-        gameObject.SetActive(false);
-    }
-
-    private void OnDisable()
-    {
-        CancelInvoke();
+        switch (other.gameObject.name)
+        {
+            case "Bullet":
+                Debug.Log("A bullet reached the killbox");
+                other.gameObject.transform.parent.gameObject.SetActive(false);
+                break;
+            case "Enemy(Clone)":
+                Debug.Log("An Enemy reached the killbox");
+                other.gameObject.SetActive(false);
+                break;
+            default:
+                Debug.Log($"{other.gameObject.name} reached the killbox");
+                break;
+        }
     }
 }

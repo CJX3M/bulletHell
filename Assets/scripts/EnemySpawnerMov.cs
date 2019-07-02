@@ -30,12 +30,11 @@ public class EnemySpawnerMov : MonoBehaviour
 	    {
             nextSpawn = Time.time + spawnRate;
 
-	        GameObject clone = GetComponent<ObjectPool>().GetPooledObject();
-            if (clone == null) return;
-            clone.GetComponent<EnemyMovement>().SetPlayerShip(playerShip);
+            GameObject clone = GetComponent<ObjectPool>().GetPooledObject();
+            if (clone == null || clone.activeInHierarchy) return;
             clone.transform.position = transform.position;
-            clone.transform.rotation = transform.rotation;
             clone.GetComponent<Health>().RestoreHealth();
+            clone.GetComponent<EnemyMovement>().SetPlayerShip(playerShip);
             clone.SetActive(true);
         }
 	}

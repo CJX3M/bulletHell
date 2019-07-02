@@ -23,7 +23,7 @@ public class ObjectPool : MonoBehaviour
 
         for (int i = 0; i < poolAmmount; i++)
         {
-            GameObject obj = Instantiate(objectForPool);
+            GameObject obj = (GameObject) Instantiate(objectForPool);
             obj.SetActive(false);
             objectsForPool.Add(obj);
         }
@@ -46,10 +46,4 @@ public class ObjectPool : MonoBehaviour
         }
         return null;
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 }
