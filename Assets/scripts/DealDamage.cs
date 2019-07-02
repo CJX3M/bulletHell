@@ -1,18 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DealDamage : MonoBehaviour
 {
     public string target;
     public int damageAmount;
+    public GameObject damageAnim;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == target)
         {
+            gameObject.SetActive(false);            
             other.gameObject.GetComponent<Health>().DealDamage(damageAmount);
-            gameObject.SetActive(false);
+            Instantiate(damageAnim, other.gameObject.transform.position, other.gameObject.transform.rotation);
         }
     }
 }

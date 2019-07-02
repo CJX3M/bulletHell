@@ -77,6 +77,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: Enemie
   damageAmount: 10
+  damageAnim: {fileID: 3609340649185009681, guid: bf7b72cd3fc028e42b701369b5984433,
+    type: 3}
 --- !u!1 &1797503507073880
 GameObject:
   m_ObjectHideFlags: 0

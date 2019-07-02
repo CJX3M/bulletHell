@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     public int playerMaxHealth;
     public Slider healthSlider;
-
+    public GameObject explosionAnim;
 
     private int playerCurrentHealth;
 
@@ -25,7 +25,10 @@ public class Health : MonoBehaviour
         if (healthSlider != null)
             healthSlider.value = playerCurrentHealth;
         if (playerCurrentHealth <= 0)
+        {
             gameObject.SetActive(false);
+            Instantiate(explosionAnim, gameObject.transform.position ,gameObject.transform.rotation);
+        }
 	}
 
     public void DealDamage (int amount)
@@ -36,5 +39,10 @@ public class Health : MonoBehaviour
     public void RestoreHealth ()
     {
         playerCurrentHealth = playerMaxHealth;
+    }
+
+    public bool IsAlive()
+    {
+        return playerCurrentHealth > 0;
     }
 }

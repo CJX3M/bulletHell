@@ -8,11 +8,11 @@ public class KillBox : MonoBehaviour
         switch (other.gameObject.name)
         {
             case "Bullet":
-                Debug.Log("A bullet reached the killbox");
+                //Debug.Log("A bullet reached the killbox");
                 other.gameObject.transform.parent.gameObject.SetActive(false);
                 break;
             case "Enemy(Clone)":
-                Debug.Log("An Enemy reached the killbox");
+                //Debug.Log("An Enemy reached the killbox");
                 other.gameObject.SetActive(false);
                 break;
             default:

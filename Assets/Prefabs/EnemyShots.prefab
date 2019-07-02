@@ -170,3 +170,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: Player
   damageAmount: 2
+  damageAnim: {fileID: 3609340649185009681, guid: bf7b72cd3fc028e42b701369b5984433,
+    type: 3}

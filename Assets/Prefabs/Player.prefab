@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawn: {fileID: 8711897932576553877}
-  fireRate: 0.8
+  fireRate: 2
 --- !u!114 &8711897933994608384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,3 +206,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaxHealth: 100
   healthSlider: {fileID: 0}
+  explosionAnim: {fileID: 1338348848307739365, guid: 2862da982998bb84ab2a1926ebec684f,
+    type: 3}

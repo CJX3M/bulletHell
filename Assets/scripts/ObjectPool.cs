@@ -35,6 +35,8 @@ public class ObjectPool : MonoBehaviour
         {
             if (!objectsForPool[i].activeInHierarchy)
             {
+                objectsForPool[i].transform.position = new Vector3(0, 0, 0);
+                objectsForPool[i].transform.rotation = new Quaternion(0, 0, 0, 0);
                 return objectsForPool[i];
             }
         }

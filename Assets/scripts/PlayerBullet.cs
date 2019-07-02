@@ -17,8 +17,6 @@ public class PlayerBullet : MonoBehaviour
 
     void Update()
     {
-        //myTime += Time.deltaTime;
-
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
