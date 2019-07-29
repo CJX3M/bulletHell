@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8711897932576553876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.446}
+  m_LocalPosition: {x: 0, y: 0, z: 0.838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8711897933994608396}
@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 8711897933994608392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -6.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 8711897932576553877}
   m_Father: {fileID: 0}
@@ -157,11 +157,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  tilt: 3
   boundary:
-    xMin: -6
-    xMax: 6
-    zMin: -2
+    xMin: -4
+    xMax: 4
+    zMin: -6.5
     zMax: 6.5
 --- !u!114 &8711897933994608399
 MonoBehaviour:
@@ -176,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawn: {fileID: 8711897932576553877}
-  fireRate: 0.5
+  fireRate: 2
 --- !u!114 &8711897933994608384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectForPool: {fileID: 1509281206717448, guid: 4a70a41779793354ab8f5343a1b88f00,
     type: 3}
-  poolAmmount: 10
+  poolAmmount: 20
   growth: 1
 --- !u!114 &8711897933994608385
 MonoBehaviour:

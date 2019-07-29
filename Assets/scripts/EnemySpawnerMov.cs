@@ -32,7 +32,7 @@ public class EnemySpawnerMov : MonoBehaviour
             if (clone == null || clone.activeInHierarchy) return;
             clone.transform.position = transform.position;
             clone.GetComponent<Health>().RestoreHealth();
-            //clone.GetComponent<EnemyMovement>().SetPlayerShip(playerShip);
+            clone.GetComponent<EnemyMovement>().SetPlayerShip(playerShip);
             clone.SetActive(true);
         }
 	}
