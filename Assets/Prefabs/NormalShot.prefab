@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 114134763336762230}
   - component: {fileID: 114206845340670662}
   m_Layer: 0
-  m_Name: Shots
+  m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 23801878680218702}
   - component: {fileID: 136191456134847500}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
