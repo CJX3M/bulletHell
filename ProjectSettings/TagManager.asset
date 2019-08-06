@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameEntity
   - Enemie
+  - Bullet
   layers:
   - Default
   - TransparentFX

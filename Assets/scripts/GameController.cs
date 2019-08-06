@@ -18,8 +18,8 @@ public class GameController : MonoBehaviour
             nextSpawn = Time.time + spawnRate;
 
             GameObject clone = GetComponent<ObjectPool>().GetPooledObject();
-            if (clone == null || clone.activeInHierarchy) return;
-            clone.transform.position = new Vector3(Random.Range(-6f, 6f), 0, 20);
+            if (clone == null) return;
+            clone.transform.position = new Vector3(Random.Range(-6f, 6f), 0, 20);            
             clone.GetComponent<Health>().RestoreHealth();
             clone.GetComponent<EnemyAim>().SetPlayerShip(playerShip);
             clone.SetActive(true);

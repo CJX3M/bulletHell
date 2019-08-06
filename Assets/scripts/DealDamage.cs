@@ -8,6 +8,7 @@ public class DealDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"Bullet damage {other.tag}");
         if (other.tag == target)
         {
             gameObject.SetActive(false);            
