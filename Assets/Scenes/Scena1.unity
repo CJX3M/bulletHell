@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -214,8 +215,8 @@ GameObject:
   - component: {fileID: 300294367}
   - component: {fileID: 300294366}
   - component: {fileID: 300294365}
-  - component: {fileID: 300294364}
   - component: {fileID: 300294363}
+  - component: {fileID: 300294364}
   m_Layer: 0
   m_Name: KillBox
   m_TagString: Untagged
@@ -243,10 +244,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300294362}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 0.99999994}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &300294365
 MeshRenderer:
@@ -262,6 +263,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -302,8 +304,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300294362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 7.36}
-  m_LocalScale: {x: 16.43, y: 11.51, z: 25.53}
+  m_LocalPosition: {x: 0, y: 0, z: 7.44}
+  m_LocalScale: {x: 20.77, y: 9.3, z: 25.53}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -333,8 +335,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649854289}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.5
   m_Range: 10
@@ -456,8 +459,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262871334}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 0.5019608, g: 0.7529412, b: 0.7529412, a: 1}
   m_Intensity: 0.5
   m_Range: 10
@@ -646,8 +650,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612949406}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.25
   m_Range: 10
@@ -745,6 +750,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -863,6 +869,21 @@ PrefabInstance:
       propertyPath: playerShip
       value: 
       objectReference: {fileID: 1011739305}
+    - target: {fileID: 4285086853919971328, guid: 568959beacf7fd941b501371415335b6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285086853919971329, guid: 568959beacf7fd941b501371415335b6,
+        type: 3}
+      propertyPath: growth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285086853919971329, guid: 568959beacf7fd941b501371415335b6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 568959beacf7fd941b501371415335b6, type: 3}
 --- !u!1001 &6840995407226472773
@@ -1006,11 +1027,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8711897933994608392, guid: 794b9ceb249340a44a82711443448896,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 8711897933994608396, guid: 794b9ceb249340a44a82711443448896,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1066,10 +1082,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8711897933994608392, guid: 794b9ceb249340a44a82711443448896,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8711897933994608385, guid: 794b9ceb249340a44a82711443448896,
         type: 3}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1222002306}
+    - target: {fileID: 8711897933994608397, guid: 794b9ceb249340a44a82711443448896,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711897933994608384, guid: 794b9ceb249340a44a82711443448896,
+        type: 3}
+      propertyPath: objectForPool
+      value: 
+      objectReference: {fileID: 1509281206717448, guid: 4a70a41779793354ab8f5343a1b88f00,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794b9ceb249340a44a82711443448896, type: 3}

@@ -24,7 +24,7 @@ public class playerMovement : MonoBehaviour
                 Mathf.Clamp(rigidBody.position.z, boundary.zMin, boundary.zMax)
             );
 
-        rigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, rigidBody.velocity.x * -tilt);
+        //rigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, rigidBody.velocity.x * -tilt);
     }
    
 }
