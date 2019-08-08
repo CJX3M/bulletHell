@@ -6,6 +6,7 @@ public class EnemyShot : MonoBehaviour
 {
     public Transform shotSpawn;
     public float fireRate;
+    public bool fire = true;
 
     // Use this for initialization
     void Start ()
@@ -16,6 +17,8 @@ public class EnemyShot : MonoBehaviour
     // Update is called once per frame
     void Fire ()
     {
+        if (!fire)
+            return;
         GameObject bullet = GetComponent<ObjectPool>().GetPooledObject();
         if (bullet == null) return;
         bullet.transform.position = shotSpawn.position;

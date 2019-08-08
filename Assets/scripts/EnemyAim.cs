@@ -10,6 +10,8 @@ public class EnemyAim : MonoBehaviour
     void Update()
     {
         transform.LookAt(playerShip);
+        if (gameObject.transform.position.z < playerShip.transform.position.z)
+            GetComponent<EnemyShot>().fire = false;
     }
 
     public void SetPlayerShip(Transform _playerShip)
