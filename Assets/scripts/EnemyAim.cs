@@ -9,8 +9,6 @@ public class EnemyAim : MonoBehaviour
 
     void Update()
     {
-        //Vector3 toTarget = playerShip.position - transform.position;
-        //transform.rotation = Quaternion.LookRotation(Vector3.down, toTarget);
         transform.LookAt(playerShip);
     }
 
