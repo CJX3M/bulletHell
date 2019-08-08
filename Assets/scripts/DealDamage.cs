@@ -8,7 +8,9 @@ public class DealDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == target)
+        Debug.Log($"{gameObject.name} {gameObject.tag} damage {other.gameObject.tag} {other.gameObject.name}");
+        Debug.Log($"{gameObject.name} target {target}");
+        if (other.gameObject.tag == target)
         {
             gameObject.SetActive(false);            
             other.gameObject.GetComponent<Health>().DealDamage(damageAmount);

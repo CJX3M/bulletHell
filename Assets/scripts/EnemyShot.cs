@@ -4,28 +4,22 @@ using UnityEngine;
 
 public class EnemyShot : MonoBehaviour
 {
+    public Transform shotSpawn;
     public float fireRate;
-
-    private float myTime;
-    private float nextFire;
 
     // Use this for initialization
     void Start ()
     {
+        InvokeRepeating("Fire", 0, fireRate);
     }
 
     // Update is called once per frame
-    void Update ()
+    void Fire ()
     {
-        if (Time.time > nextFire)
-        {
-            nextFire = Time.time + fireRate;
             GameObject bullet = GetComponent<ObjectPool>().GetPooledObject();
             if (bullet == null) return;
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = transform.rotation;
+            bullet.transform.position = shotSpawn.position;
+            bullet.transform.rotation = shotSpawn.rotation;
             bullet.SetActive(true);
-        }
-
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     public Transform bulletSpawn;
-    public float fireRate;
+    public float fireRate = 0.5f;
 
     private float nextFire;
     private float myTime;
