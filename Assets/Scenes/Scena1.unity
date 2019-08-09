@@ -1097,5 +1097,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1509281206717448, guid: 4a70a41779793354ab8f5343a1b88f00,
         type: 3}
+    - target: {fileID: 8711897933994608398, guid: 794b9ceb249340a44a82711443448896,
+        type: 3}
+      propertyPath: playerBoundary
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794b9ceb249340a44a82711443448896, type: 3}

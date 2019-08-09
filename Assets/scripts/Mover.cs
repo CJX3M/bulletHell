@@ -10,6 +10,7 @@ public class Mover : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	    GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        if (gameObject.tag == "Enemie")
+	        GetComponent<Rigidbody>().velocity = transform.forward * speed;
 	}
 }

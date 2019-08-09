@@ -25,6 +25,7 @@ public class PlayerBullet : MonoBehaviour
             if (bullet == null) return;
             bullet.transform.position = bulletSpawn.transform.position;
             bullet.transform.rotation = bulletSpawn.transform.rotation;
+            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bullet.GetComponent<Mover>().speed;
             bullet.SetActive(true);
         }
     }

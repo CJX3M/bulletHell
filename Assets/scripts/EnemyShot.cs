@@ -23,6 +23,7 @@ public class EnemyShot : MonoBehaviour
         if (bullet == null) return;
         bullet.transform.position = shotSpawn.position;
         bullet.transform.rotation = shotSpawn.rotation;
+        bullet.GetComponent<Rigidbody>().velocity = shotSpawn.forward * bullet.GetComponent<Mover>().speed;
         bullet.SetActive(true);
     }
 }
