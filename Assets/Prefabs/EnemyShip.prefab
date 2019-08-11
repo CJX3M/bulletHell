@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 2646900603239545909}
   fireRate: 0.6
+  fire: 1
 --- !u!114 &3324310998589320214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -3
+  points: 10
 --- !u!114 &-3874624596623538408
 MonoBehaviour:
   m_ObjectHideFlags: 0

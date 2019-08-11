@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-
     public float speed;
+    public int points;
 
 	// Use this for initialization
 	void Start ()

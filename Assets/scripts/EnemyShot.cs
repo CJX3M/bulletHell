@@ -14,6 +14,11 @@ public class EnemyShot : MonoBehaviour
         InvokeRepeating("Fire", 0, fireRate);
     }
 
+    private void Awake()
+    {
+        fire = true;
+    }
+
     // Update is called once per frame
     void Fire ()
     {

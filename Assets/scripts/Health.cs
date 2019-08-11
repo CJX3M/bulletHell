@@ -9,14 +9,24 @@ public class Health : MonoBehaviour
     public Slider healthSlider;
     public GameObject explosionAnim;
 
+    private GameController gameController;
     private int playerCurrentHealth;
 
-	// Use this for initialization
-	void Awake ()
+    private void Start()
+    {
+        GameObject _gameController = GameObject.FindGameObjectWithTag("GameController");
+        if (_gameController != null)
+            gameController = _gameController.GetComponent<GameController>();
+        if (_gameController != null)
+            Debug.Log("The object 'GameController' is null");
+    }
+
+    // Use this for initialization
+    void Awake ()
     {
         playerCurrentHealth = playerMaxHealth;
         if (healthSlider != null)
-            healthSlider.maxValue = playerMaxHealth;
+            healthSlider.maxValue = playerMaxHealth;        
     }
 
     // Update is called once per frame
@@ -28,6 +38,7 @@ public class Health : MonoBehaviour
         {
             gameObject.SetActive(false);
             Instantiate(explosionAnim, gameObject.transform.position ,gameObject.transform.rotation);
+            gameController.UpdateScore(GetComponent<Mover>().points);
         }
 	}
 
@@ -42,7 +53,7 @@ public class Health : MonoBehaviour
     }
 
     public bool IsAlive()
-    {
+    {        
         return playerCurrentHealth > 0;
     }
 }
