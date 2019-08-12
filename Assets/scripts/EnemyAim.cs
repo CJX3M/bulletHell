@@ -9,9 +9,9 @@ public class EnemyAim : MonoBehaviour
 
     void Update()
     {
-        //Vector3 toTarget = playerShip.position - transform.position;
-        //transform.rotation = Quaternion.LookRotation(Vector3.down, toTarget);
         transform.LookAt(playerShip);
+        if (gameObject.transform.position.z <= -3 || !gameObject.GetComponent<Health>().IsAlive())
+            GetComponent<EnemyShot>().fire = false;        
     }
 
     public void SetPlayerShip(Transform _playerShip)

@@ -12,7 +12,6 @@ public class playerMovement : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-
         var movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         var rigidBody = GetComponent<Rigidbody>();
         rigidBody.velocity = movement * speed;
@@ -24,7 +23,7 @@ public class playerMovement : MonoBehaviour
                 Mathf.Clamp(rigidBody.position.z, boundary.zMin, boundary.zMax)
             );
 
-        //rigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, rigidBody.velocity.x * -tilt);
+        rigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, rigidBody.velocity.x * -tilt);
     }
    
 }
