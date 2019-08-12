@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
                     clone.transform.position = new Vector3(Random.Range(-6f, 6f), 0, 20);
                     clone.GetComponent<Health>().RestoreHealth();
                     clone.GetComponent<EnemyAim>().SetPlayerShip(playerShip);
+                    clone.GetComponent<EnemyShot>().fire = true;
                     clone.SetActive(true);
                     yield return new WaitForSeconds(spawnWait);
                 }

@@ -12,7 +12,7 @@ public class DealDamage : MonoBehaviour
         {
             gameObject.SetActive(false);            
             other.gameObject.GetComponent<Health>().DealDamage(damageAmount);
-            Instantiate(damageAnim, other.gameObject.transform.position, other.gameObject.transform.rotation);
+            Instantiate(damageAnim, other.gameObject.transform.position, damageAnim.transform.rotation);
         }
     }
 }
