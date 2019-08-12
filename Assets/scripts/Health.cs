@@ -37,7 +37,7 @@ public class Health : MonoBehaviour
         if (playerCurrentHealth <= 0)
         {
             gameObject.SetActive(false);
-            Instantiate(explosionAnim, gameObject.transform.position ,gameObject.transform.rotation);
+            Instantiate(explosionAnim, gameObject.transform.position, explosionAnim.transform.rotation);
             gameController.UpdateScore(GetComponent<Mover>().points);
         }
 	}

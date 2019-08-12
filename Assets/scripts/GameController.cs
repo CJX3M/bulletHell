@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     private float myTime;
     private bool gameOver;
     private bool restart;
+    private int currentWave = 1;
 
     public Text ScoreText;
     public Text GameOverText;
@@ -28,6 +29,7 @@ public class GameController : MonoBehaviour
         restart = false;
         GameOverText.text = "";
         RestartGameText.text = "";
+        currentWave = 1;
         StartCoroutine(SpawnEnemies());
         UpdateScore(0);
     }
@@ -45,9 +47,11 @@ public class GameController : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-        yield return new WaitForSeconds(startWait);
+        GameOverText.text = $"{currentWave}st Wave Incomming";        
         while (!gameOver)
         {
+            yield return new WaitForSeconds(startWait);
+            GameOverText.text = "";
             for (int i = 0; i < GetComponent<ObjectPool>().poolAmmount; i++)
             {
                 GameObject clone = GetComponent<ObjectPool>().GetPooledObject();
@@ -64,6 +68,22 @@ public class GameController : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(waveWait);
+            if (gameOver)
+            {
+                restart = true;
+                RestartGameText.text = "Press ENTER to start a new Game";
+            }
+            else
+            {
+                switch (++currentWave)
+                {
+                    case 2: GameOverText.text = $"{currentWave}nd Wave Incomming"; break;
+                    case 3: GameOverText.text = $"{currentWave}rd Wave Incomming"; break;
+                    default: GameOverText.text = $"{currentWave}th Wave Incomming"; break;
+                }
+                
+            }
+
         }
     }
 
@@ -76,8 +96,6 @@ public class GameController : MonoBehaviour
     private void GameOver ()
     {
         gameOver = true;
-        restart = true;
         GameOverText.text = "Game Over";
-        RestartGameText.text = "Press ENTER to start a new Game";
     }
 }
