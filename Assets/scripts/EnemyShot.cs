@@ -11,7 +11,7 @@ public class EnemyShot : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        InvokeRepeating("Fire", 0, fireRate);
+        InvokeRepeating("Fire", Random.Range(1, 3), fireRate);
     }
 
     // Update is called once per frame
